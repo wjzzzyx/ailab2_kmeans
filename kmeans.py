@@ -58,13 +58,6 @@ pixels = np.zeros((m * n, 3))
 for i in xrange(m):
     for j in xrange(n):
         pixels[i * n + j] = mat[i, j]
-error = 0
-for i in xrange(m):
-    for j in xrange(n):
-        if not np.array_equal(pixels[i * n + j], mat[i, j]):
-            error += 1
-print error
-
 
 for k in [2, 8, 16, 64]:
     (centers, belonging) = kmeans(pixels, k)
